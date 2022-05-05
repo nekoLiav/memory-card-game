@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Cards = () => {
+const Cards = (props) => {
   const [cards, setCards] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
 
@@ -9,8 +9,15 @@ const Cards = () => {
   }, []);
 
   useEffect(() => {
+    props.handleScore(clickedCards.length);
     setCards(shuffleCards());
   }, [clickedCards]);
+
+  const handleCardClick = (key) => {
+    clickedCards.includes(key)
+      ? setClickedCards([])
+      : setClickedCards((clicked) => [...clicked, key]);
+  };
 
   //Fisher-Yates Shuffle, courtesy of stackoverflow
   const shuffleCards = () => {
@@ -34,10 +41,7 @@ const Cards = () => {
   return (
     <div className="cards">
       {cards.map((card) => (
-        <div
-          key={card}
-          onClick={() => setClickedCards((clicked) => [...clicked, card])}
-        >
+        <div key={card} onClick={() => handleCardClick(card)}>
           <p>{card}</p>
         </div>
       ))}

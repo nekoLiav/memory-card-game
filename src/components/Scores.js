@@ -1,10 +1,10 @@
 import React from "react";
 
-const Scores = () => {
+const Scores = (props) => {
   return (
     <div className="scores">
-      <p>Current Score: 0</p>
-      <p>Highest Score: 0</p>
+      <p>Current Score: {props.currentScore}</p>
+      <p>Highest Score: {props.highScore}</p>
     </div>
   );
 };
