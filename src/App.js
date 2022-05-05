@@ -1,5 +1,6 @@
 import React from "react";
 import Cards from "./components/Cards";
+import Scores from "./components/Scores";
 
 const App = () => {
   return (
@@ -11,7 +12,9 @@ const App = () => {
         <div className="card-container">
           <Cards />
         </div>
-        <div className="score-container"></div>
+        <div className="score-container">
+          <Scores />
+        </div>
       </div>
       <footer></footer>
     </div>

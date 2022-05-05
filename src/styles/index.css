@@ -53,14 +53,12 @@ header {
   border: 1px solid aliceblue;
   height: 100%;
   width: 100%;
-  overflow: auto;
 }
 
 .card-container {
   border: 1px solid aliceblue;
   height: 100%;
   width: 100%;
-  overflow: auto;
 }
 
 .cards {
@@ -88,10 +86,19 @@ header {
 }
 
 .score-container {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid aliceblue;
+  color: white;
+  min-height: 5rem;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 footer {

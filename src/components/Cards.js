@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
+  const [clickedCards, setClickedCards] = useState([]);
 
   useEffect(() => {
-    shuffleCards();
+    setCards(shuffleCards());
   }, []);
+
+  useEffect(() => {
+    setCards(shuffleCards());
+  }, [clickedCards]);
 
   //Fisher-Yates Shuffle, courtesy of stackoverflow
   const shuffleCards = () => {
@@ -23,13 +28,16 @@ const Cards = () => {
       ];
     }
 
-    return setCards(cardArray);
+    return cardArray;
   };
 
   return (
     <div className="cards">
       {cards.map((card) => (
-        <div key={card} onClick={shuffleCards}>
+        <div
+          key={card}
+          onClick={() => setClickedCards((clicked) => [...clicked, card])}
+        >
           <p>{card}</p>
         </div>
       ))}
