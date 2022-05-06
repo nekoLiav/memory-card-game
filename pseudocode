@@ -1,6 +1,0 @@
-1. Cards randomized onm page load.
-2. User clicks card.
-3. If card not already clicked, increment currentScore and highScore.
-4. If card not already clicked, shuffle cards.
-5. If card already clicked, reset currentScore.
-6. If currentScore = 9, declare winner, reset both scores.
