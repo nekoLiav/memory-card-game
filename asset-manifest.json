@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/memory-card-game/static/css/main.b82cfd2b.css",
+    "main.js": "/memory-card-game/static/js/main.2d2dec0e.js",
+    "static/media/Kyojuro_anime.png": "/memory-card-game/static/media/Kyojuro_anime.1eecb42b4ed599312251.png",
+    "static/media/Gyomei_anime.png": "/memory-card-game/static/media/Gyomei_anime.f87c645154b619d5aeda.png",
+    "static/media/Tengen_anime.png": "/memory-card-game/static/media/Tengen_anime.209900469bc150cfd233.png",
+    "static/media/Shinobu_anime.png": "/memory-card-game/static/media/Shinobu_anime.bd21932222ca1cd6ec57.png",
+    "static/media/Sanemi_anime.png": "/memory-card-game/static/media/Sanemi_anime.1ab83ac21a96e75d6105.png",
+    "static/media/Obanai_anime.png": "/memory-card-game/static/media/Obanai_anime.886f3376c7b5c9017fc6.png",
+    "static/media/Mitsuri_anime.png": "/memory-card-game/static/media/Mitsuri_anime.7b9e9b881a7147ac8bd4.png",
+    "static/media/Muichiro_anime.png": "/memory-card-game/static/media/Muichiro_anime.654ccf36b3a785b7d146.png",
+    "static/media/Giyu_anime.png": "/memory-card-game/static/media/Giyu_anime.09d3efba1b68d91d5344.png",
+    "index.html": "/memory-card-game/index.html",
+    "main.b82cfd2b.css.map": "/memory-card-game/static/css/main.b82cfd2b.css.map",
+    "main.2d2dec0e.js.map": "/memory-card-game/static/js/main.2d2dec0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b82cfd2b.css",
+    "static/js/main.2d2dec0e.js"
+  ]
+}
