@@ -53,29 +53,32 @@ header {
   border: 1px solid aliceblue;
   height: 100%;
   width: 100%;
+  overflow: auto;
 }
 
 .card-container {
   border: 1px solid aliceblue;
   height: 100%;
   width: 100%;
+  overflow: auto;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 5rem;
-  padding: 5rem;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem;
   height: 100%;
   width: 100%;
-  overflow: auto;
 }
 
 .cards div {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: crosshair;
   font-size: 10rem;
   color: white;
   border: 1px solid aliceblue;
@@ -91,7 +94,7 @@ header {
   align-items: center;
   border: 1px solid aliceblue;
   color: white;
-  min-height: 5rem;
+  min-height: 2rem;
 }
 
 .scores {
@@ -99,6 +102,11 @@ header {
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+}
+
+.win {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 footer {
