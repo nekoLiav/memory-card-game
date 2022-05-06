@@ -9,14 +9,16 @@ const Cards = (props) => {
   }, []);
 
   useEffect(() => {
-    props.handleScore(clickedCards.length);
     setCards(shuffleCards());
+    props.setCurrentScore(clickedCards.length);
   }, [clickedCards]);
 
   const handleCardClick = (key) => {
-    clickedCards.includes(key)
-      ? setClickedCards([])
-      : setClickedCards((clicked) => [...clicked, key]);
+    if (clickedCards.includes(key)) {
+      setClickedCards([]);
+    } else {
+      setClickedCards((clicked) => [...clicked, key]);
+    }
   };
 
   //Fisher-Yates Shuffle, courtesy of stackoverflow
@@ -39,12 +41,14 @@ const Cards = (props) => {
   };
 
   return (
-    <div className="cards">
-      {cards.map((card) => (
-        <div key={card} onClick={() => handleCardClick(card)}>
-          <p>{card}</p>
-        </div>
-      ))}
+    <div>
+      <div className="cards">
+        {cards.map((card) => (
+          <div key={card} onClick={() => handleCardClick(card)}>
+            <p>{card}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
