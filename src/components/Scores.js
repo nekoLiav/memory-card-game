@@ -5,7 +5,7 @@ const Scores = (props) => {
     <div className="scores">
       {props.currentScore === 9 && <p className="win">You Win! :D</p>}
       {props.currentScore < 9 && (
-        <div>
+        <div className="scores">
           <p>Current Score: {props.currentScore}</p>
           <p>Highest Score: {props.highScore}</p>
         </div>

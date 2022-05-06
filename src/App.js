@@ -5,10 +5,9 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <p>Memory Card Game</p>
+        <p>Demon Slayer: Hashira Memory Cards</p>
       </header>
       <Cards />
-      <footer></footer>
     </div>
   );
 };

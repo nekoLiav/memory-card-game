@@ -1,4 +1,13 @@
 import React, { useEffect, useState } from "react";
+import img1 from "../assets/Giyu_anime.png";
+import img2 from "../assets/Kyojuro_anime.png";
+import img3 from "../assets/Tengen_anime.png";
+import img4 from "../assets/Shinobu_anime.png";
+import img5 from "../assets/Obanai_anime.png";
+import img6 from "../assets/Sanemi_anime.png";
+import img7 from "../assets/Gyomei_anime.png";
+import img8 from "../assets/Muichiro_anime.png";
+import img9 from "../assets/Mitsuri_anime.png";
 import Scores from "./Scores";
 
 const Cards = () => {
@@ -14,7 +23,7 @@ const Cards = () => {
     if (roundClickedCards.length === 9) {
       setTimeout(() => {
         setRoundClickedCards([]);
-      }, 5000);
+      }, 3000);
     } else {
       setCards(shuffleCards());
     }
@@ -41,7 +50,7 @@ const Cards = () => {
 
   //Fisher-Yates Shuffle, courtesy of stackoverflow
   const shuffleCards = () => {
-    const cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const cardArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let currentIndex = cardArray.length,
       randomIndex;
 
@@ -58,23 +67,38 @@ const Cards = () => {
     return cardArray;
   };
 
+  const images = [
+    { img: img1, text: "Tomioka Giyū" },
+    { img: img2, text: "Rengoku Kyōjurō" },
+    { img: img3, text: "Uzui Tengen" },
+    { img: img4, text: "Kochō Shinobu" },
+    { img: img5, text: "Iguro Obanai" },
+    { img: img6, text: "Shinazugawa Sanemi" },
+    { img: img7, text: "Himejima Gyōmei" },
+    { img: img8, text: "Tokitō Muichirō" },
+    { img: img9, text: "Kanroji Mitsuri" },
+  ];
+
   return (
     <div className="main">
       <div className="card-container">
         <div className="cards">
           {cards.map((card) => (
-            <div key={card} onClick={() => handleCardClick(card)}>
-              <p>{card}</p>
+            <div
+              className="card"
+              key={card}
+              onClick={() => handleCardClick(card)}
+            >
+              <img className="card-img" src={images[card].img}></img>
+              <p>{images[card].text}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="score-container">
-        <Scores
-          currentScore={roundClickedCards.length}
-          highScore={sessionClickedCards.length}
-        />
-      </div>
+      <Scores
+        currentScore={roundClickedCards.length}
+        highScore={sessionClickedCards.length}
+      />
     </div>
   );
 };
