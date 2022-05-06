@@ -1,6 +1,6 @@
 # memory-card-game
 
-[LIVE DEMO]()
+[LIVE DEMO](https://nekoliav.github.io/memory-card-game/)
 
 <h3>Project Details:</h3>
 <p>This project is a part of the Full Stack JavaScript path of The Odin Project's curriculum.</p>
