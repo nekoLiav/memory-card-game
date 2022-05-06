@@ -1,23 +1,41 @@
 import React, { useEffect, useState } from "react";
+import Scores from "./Scores";
 
-const Cards = (props) => {
+const Cards = () => {
   const [cards, setCards] = useState([]);
-  const [clickedCards, setClickedCards] = useState([]);
+  const [roundClickedCards, setRoundClickedCards] = useState([]);
+  const [sessionClickedCards, setSessionClickedCards] = useState([]);
 
   useEffect(() => {
     setCards(shuffleCards());
   }, []);
 
   useEffect(() => {
-    setCards(shuffleCards());
-    props.setCurrentScore(clickedCards.length);
-  }, [clickedCards]);
+    if (roundClickedCards.length === 9) {
+      setTimeout(() => {
+        setRoundClickedCards([]);
+      }, 5000);
+    } else {
+      setCards(shuffleCards());
+    }
+  }, [roundClickedCards]);
+
+  useEffect(() => {
+    if (sessionClickedCards.length === 9) {
+      setSessionClickedCards([]);
+    }
+  }, [sessionClickedCards]);
 
   const handleCardClick = (key) => {
-    if (clickedCards.includes(key)) {
-      setClickedCards([]);
-    } else {
-      setClickedCards((clicked) => [...clicked, key]);
+    if (roundClickedCards.length < 9) {
+      if (roundClickedCards.includes(key)) {
+        setRoundClickedCards([]);
+      } else {
+        setRoundClickedCards((clicked) => [...clicked, key]);
+      }
+      if (!sessionClickedCards.includes(key)) {
+        setSessionClickedCards((clicked) => [...clicked, key]);
+      }
     }
   };
 
@@ -41,13 +59,21 @@ const Cards = (props) => {
   };
 
   return (
-    <div>
-      <div className="cards">
-        {cards.map((card) => (
-          <div key={card} onClick={() => handleCardClick(card)}>
-            <p>{card}</p>
-          </div>
-        ))}
+    <div className="main">
+      <div className="card-container">
+        <div className="cards">
+          {cards.map((card) => (
+            <div key={card} onClick={() => handleCardClick(card)}>
+              <p>{card}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="score-container">
+        <Scores
+          currentScore={roundClickedCards.length}
+          highScore={sessionClickedCards.length}
+        />
       </div>
     </div>
   );
